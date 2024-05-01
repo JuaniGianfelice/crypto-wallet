@@ -1,24 +1,24 @@
-import { useState } from "react";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home";
+import Home from './pages/init'
+import Login from "./pages/login"
 import Dashboard from "./pages/dashboard"
 
 function App() {
-  const [count, setCount] = useState(0);
+  
 
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
 
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      
     </>
   );
 }
